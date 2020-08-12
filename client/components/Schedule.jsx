@@ -24,12 +24,6 @@ class Schedule extends Component {
             </ListItem>
             <ListItem divider="true">
               <ListItemText primary="12:00" />
-              <List>
-                <ListItem>
-                  <Checkbox />
-                  <ListItemText primary="done" />
-                </ListItem>
-              </List>
             </ListItem>
             <ListItem divider="true">
               <ListItemText primary="1:00" />

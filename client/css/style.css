@@ -3,13 +3,18 @@ h1 {
   color: teal;
 }
 
+h3 {
+  font-family: sans-serif;
+  color: navy;
+}
+
 .wrapper {
   display: flex;
-  justify-content: space-between;
-  width: 50%;
+  justify-content: flex-start;
 }
 
 .schedule {
   display: flex;
   justify-content: space-between;
+  width: 10%;
 }

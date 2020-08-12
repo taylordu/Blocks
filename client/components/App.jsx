@@ -6,39 +6,47 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      schedules: [1, 2],
+      schedules: 1,
     };
-    this.renderSchedule = this.renderSchedule.bind(this);
+    this.addSchedule = this.addSchedule.bind(this);
+    this.deleteSchedule = this.deleteSchedule.bind(this);
   }
 
-  renderSchedule() {
-    this.setState({ schedules: [1, 2, 3, 4] });
+  addSchedule() {
+    this.setState((prevState) => {
+      return { schedules: prevState.schedules + 1 };
+    });
+  }
+
+  deleteSchedule() {
+    this.setState((prevState) => {
+      return { schedules: prevState.schedules - 1 };
+    });
   }
 
   render() {
-    const schedules = [];
-    for (let i = 0; i < this.state.schedules.length; i++) {
-      schedules.push(<Schedule />);
-    }
     return (
       <div>
+        <div className="description">
+          <h3>
+            Sometimes our days don't go as planned. Use the "Add Schedule"
+            button to create a revised schedule for the day.
+          </h3>
+        </div>
         <div className="buttons">
-          <Button variant="outlined" onClick={this.renderSchedule}>
-            Revise Schedule
+          <Button variant="outlined" onClick={this.addSchedule}>
+            Add Schedule
+          </Button>
+          <Button variant="outlined" onClick={this.deleteSchedule}>
+            Delete Schedule
           </Button>
         </div>
-        <div className="wrapper">{schedules}</div>
+        <div className="wrapper">
+          {Array(this.state.schedules).fill(<Schedule />)}
+        </div>
       </div>
     );
   }
 }
 
 export default App;
-
-/* EXAMPLE 
-const schedules = [];
-for (let schedule in this.props.currentValue) {
-  schedules.push(<Container />);
-}
-return <div className="schedules">{schedules}</div>
-*/
