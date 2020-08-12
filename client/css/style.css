@@ -3,7 +3,9 @@ h1 {
   color: teal;
 }
 
-h2 {
-  font-family: sans-serif;
-  color: navy;
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 25%;
 }

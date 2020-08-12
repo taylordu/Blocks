@@ -11,22 +11,115 @@ class App extends Component {
   }
   render() {
     return (
-      <div className="today">
-        <h2>Today</h2>
-        <List>
-          <ListItem>
-            <Checkbox />
-            <ListItemText primary="Learn React" />
-          </ListItem>
-          <ListItem>
-            <Checkbox />
-            <ListItemText primary="Make a list" />
-          </ListItem>
-          <ListItem>
-            <Checkbox />
-            <ListItemText primary="Drag and drop" />
-          </ListItem>
-        </List>
+      <div className="flex-container">
+        <div className="draft">
+          <List>
+            <ListItem divider="true">
+              <ListItemText primary="9:00" />
+            </ListItem>
+            <ListItem divider="true">
+              <ListItemText primary="10:00" />
+            </ListItem>
+            <ListItem divider="true">
+              <ListItemText primary="11:00" />
+            </ListItem>
+            <ListItem divider="true">
+              <ListItemText primary="12:00" />
+              <List>
+                <ListItem>
+                  <Checkbox />
+                  <ListItemText primary="done" />
+                </ListItem>
+                <ListItem>
+                  <Checkbox />
+                  <ListItemText primary="done" />
+                </ListItem>
+                <ListItem>
+                  <Checkbox />
+                  <ListItemText primary="done" />
+                </ListItem>
+              </List>
+            </ListItem>
+            <ListItem divider="true">
+              <ListItemText primary="1:00" />
+            </ListItem>
+            <ListItem divider="true">
+              <ListItemText primary="2:00" />
+            </ListItem>
+            <ListItem divider="true">
+              <ListItemText primary="3:00" />
+            </ListItem>
+            <ListItem divider="true">
+              <ListItemText primary="4:00" />
+            </ListItem>
+            <ListItem divider="true">
+              <ListItemText primary="5:00" />
+            </ListItem>
+            <ListItem divider="true">
+              <ListItemText primary="6:00" />
+            </ListItem>
+            <ListItem divider="true">
+              <ListItemText primary="7:00" />
+            </ListItem>
+            <ListItem divider="true">
+              <ListItemText primary="8:00" />
+            </ListItem>
+          </List>
+        </div>
+        <div className="revised">
+          <List>
+            <ListItem divider="true">
+              <ListItemText primary="9:00" />
+            </ListItem>
+            <ListItem divider="true">
+              <ListItemText primary="10:00" />
+            </ListItem>
+            <ListItem divider="true">
+              <ListItemText primary="11:00" />
+            </ListItem>
+            <ListItem divider="true">
+              <ListItemText primary="12:00" />
+              <List>
+                <ListItem>
+                  <Checkbox />
+                  <ListItemText primary="done" />
+                </ListItem>
+                <ListItem>
+                  <Checkbox />
+                  <ListItemText primary="done" />
+                </ListItem>
+                <ListItem>
+                  <Checkbox />
+                  <ListItemText primary="done" />
+                </ListItem>
+              </List>
+            </ListItem>
+            <ListItem divider="true">
+              <ListItemText primary="1:00" />
+            </ListItem>
+            <ListItem divider="true">
+              <ListItemText primary="2:00" />
+            </ListItem>
+            <ListItem divider="true">
+              <ListItemText primary="3:00" />
+            </ListItem>
+            <ListItem divider="true">
+              <ListItemText primary="4:00" />
+            </ListItem>
+            <ListItem divider="true">
+              <ListItemText primary="5:00" />
+            </ListItem>
+            <ListItem divider="true">
+              <ListItemText primary="6:00" />
+            </ListItem>
+            <ListItem divider="true">
+              <ListItemText primary="7:00" />
+            </ListItem>
+            <ListItem divider="true">
+              <ListItemText primary="8:00" />
+            </ListItem>
+          </List>
+        </div>
       </div>
     );
   }
