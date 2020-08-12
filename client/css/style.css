@@ -3,9 +3,13 @@ h1 {
   color: teal;
 }
 
-.flex-container {
+.wrapper {
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
-  width: 25%;
+  width: 50%;
+}
+
+.schedule {
+  display: flex;
+  justify-content: space-between;
 }
