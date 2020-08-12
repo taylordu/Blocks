@@ -1,30 +1,50 @@
 import React, { Component } from 'react';
 import Item from './ListItem.jsx';
 import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemText from '@material-ui/core/ListItemText';
-import Checkbox from '@material-ui/core/Checkbox';
 import Button from '@material-ui/core/Button';
+import Input from '@material-ui/core/Input';
+import Checkbox from '@material-ui/core/Checkbox';
+// import { ItemTypes } from './ItemTypes.jsx';
+// import { useDrop } from 'react-dnd';
 
 class ToDoList extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      toDo: '',
+    };
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleChange(event) {
+    this.setState({ toDo: event.target.toDo });
+  }
+
+  handleSubmit(event) {
+    alert('An item was submitted: ' + this.state.toDo);
+    event.preventDefault();
   }
 
   render() {
-    const items = [<Item />, <Item />, <Item />, <Item />];
+    const items = [<Item />];
     return (
       <div>
         <div className="listHeader">
           <h3>Things To Do:</h3>
         </div>
-        <div className="listButtons">
-          <Button variant="outlined">Add Item</Button>
-          <Button variant="outlined">Delete Item</Button>
-        </div>
         <div className="listItems">
           <List>{items}</List>
         </div>
+        <form className="input" autoComplete="off" onSubmit={this.handleSubmit}>
+          <Checkbox />
+          <Input
+            defaultValue=""
+            inputProps={{ 'aria-label': 'task' }}
+            value={this.state.toDo}
+            onChange={this.handleChange}
+          />
+        </form>
       </div>
     );
   }
