@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Item from './ListItem.jsx';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
@@ -11,6 +12,7 @@ class ToDoList extends Component {
   }
 
   render() {
+    const items = [<Item />, <Item />, <Item />, <Item />];
     return (
       <div>
         <div className="listHeader">
@@ -21,20 +23,7 @@ class ToDoList extends Component {
           <Button variant="outlined">Delete Item</Button>
         </div>
         <div className="listItems">
-          <List>
-            <ListItem divider="true">
-              <Checkbox />
-              <ListItemText primary="done" />
-            </ListItem>
-            <ListItem divider="true">
-              <Checkbox />
-              <ListItemText primary="done" />
-            </ListItem>
-            <ListItem divider="true">
-              <Checkbox />
-              <ListItemText primary="done" />
-            </ListItem>
-          </List>
+          <List>{items}</List>
         </div>
       </div>
     );
