@@ -4,8 +4,6 @@ import List from '@material-ui/core/List';
 import Button from '@material-ui/core/Button';
 import Input from '@material-ui/core/Input';
 import Checkbox from '@material-ui/core/Checkbox';
-// import { ItemTypes } from './ItemTypes.jsx';
-// import { useDrop } from 'react-dnd';
 
 class ToDoList extends Component {
   constructor(props) {
@@ -18,7 +16,7 @@ class ToDoList extends Component {
   }
 
   handleChange(event) {
-    this.setState({ toDo: event.target.toDo });
+    this.setState({ toDo: event.target.value });
   }
 
   handleSubmit(event) {
