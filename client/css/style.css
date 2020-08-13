@@ -13,11 +13,26 @@ h4 {
   color: teal;
 }
 
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+}
+
 .wrapper {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  width: 75%;
+  height: 100%;
+}
+
+.buttons {
+  display: flex;
   width: 50%;
+  justify-content: space-between;
 }
 
 .listItem {
@@ -27,7 +42,11 @@ h4 {
   cursor: grab;
 }
 
-.input {
+#task {
+  margin: 5px;
+}
+
+#category {
   margin: 5px;
 }
 
@@ -40,6 +59,7 @@ h4 {
 
 .hour {
   height: 50px;
+  cursor: grab;
 }
 
 .icon {
