@@ -8,6 +8,11 @@ h3 {
   color: navy;
 }
 
+h4 {
+  font-family: sans-serif;
+  color: teal;
+}
+
 .wrapper {
   display: flex;
   flex-direction: row;
@@ -19,6 +24,7 @@ h3 {
   display: flex;
   justify-content: space-between;
   width: 15%;
+  cursor: grab;
 }
 
 .input {
@@ -26,7 +32,16 @@ h3 {
 }
 
 .schedule {
-  border: solid black 1px;
+  display: flex;
+  flex-direction: column;
   width: 300px;
-  height: 300px;
+  height: 2000px;
+}
+
+.hour {
+  height: 50px;
+}
+
+.icon {
+  cursor: pointer;
 }

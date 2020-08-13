@@ -4,13 +4,12 @@ import List from '@material-ui/core/List';
 import Input from '@material-ui/core/Input';
 import Button from '@material-ui/core/Button';
 import AddOutlined from '@material-ui/icons/AddOutlined';
-import { ItemTypes } from './ItemTypes.jsx';
 
 class ToDoList extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      tasks: [],
+      tasks: ['code', 'eat', 'sleep'],
     };
     this.addTask = this.addTask.bind(this);
   }
@@ -20,16 +19,23 @@ class ToDoList extends Component {
   }
 
   render() {
+    const items = [];
+    for (let i = 0; i < this.state.tasks.length; i++) {
+      items.push(<Item />);
+    }
+
     return (
       <div>
-        <div className="listItems">
-          <List>{Array(this.state.tasks).fill(<Item />)}</List>
+        <div className="addItem">
+          <AddOutlined className="addButton" />
+          <Input className="input" ref={(text) => (this.input = text)} />
+          <Button type="submit" variant="outlined" onSubmit={this.addTask}>
+            Add Item
+          </Button>
         </div>
-        <AddOutlined className="addButton" />
-        <Input className="input" ref={(text) => (this.input = text)} />
-        <Button type="submit" variant="outlined" onSubmit={this.addTask}>
-          Add
-        </Button>
+        <div className="listItems">
+          <List>{items}</List>
+        </div>
       </div>
     );
   }

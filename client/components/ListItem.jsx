@@ -4,8 +4,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 import Checkbox from '@material-ui/core/Checkbox';
 import EditOutlined from '@material-ui/icons/EditOutlined';
 import DeleteOutlined from '@material-ui/icons/DeleteOutlined';
-import { ItemTypes } from './ItemTypes.jsx';
-import { useDrag } from 'react-dnd';
+import Draggable from 'react-draggable';
 
 class Item extends Component {
   constructor(props) {
@@ -14,14 +13,16 @@ class Item extends Component {
 
   render() {
     return (
-      <div>
-        <ListItem className="listItem">
-          <Checkbox />
-          <ListItemText primary="code" />
-          <EditOutlined />
-          <DeleteOutlined />
-        </ListItem>
-      </div>
+      <Draggable bounds="body">
+        <div>
+          <ListItem className="listItem">
+            <Checkbox className="icon" />
+            <ListItemText primary="code" />
+            <EditOutlined className="icon" />
+            <DeleteOutlined className="icon" />
+          </ListItem>
+        </div>
+      </Draggable>
     );
   }
 }
