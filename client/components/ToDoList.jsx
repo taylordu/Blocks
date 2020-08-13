@@ -4,27 +4,42 @@ import List from '@material-ui/core/List';
 import Input from '@material-ui/core/Input';
 import Button from '@material-ui/core/Button';
 import AddOutlined from '@material-ui/icons/AddOutlined';
-import DeleteOutlined from '@material-ui/icons/DeleteOutlined';
+import { ItemTypes } from './ItemTypes.jsx';
 
 class ToDoList extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      tasks: 1,
+      tasks: [],
     };
     this.addTask = this.addTask.bind(this);
     this.deleteTask = this.deleteTask.bind(this);
   }
 
-  addTask() {
-    this.setState((prevState) => {
-      return { tasks: prevState.tasks + 1 };
-    });
+  addTask(event) {
+    if (this.inputElement.value !== '') {
+      let newTask = {
+        text: this.input.value,
+        id: 0,
+      };
+
+      this.setState((prevState) => {
+        return {
+          tasks: prevState.tasks.concat(newTask),
+        };
+      });
+
+      this.input.value = '';
+    }
+
+    console.log(this.state.tasks);
+
+    event.preventDefault();
   }
 
   deleteTask() {
     this.setState((prevState) => {
-      return { tasks: prevState.tasks - 1 };
+      return { tasks: prevState.tasks };
     });
   }
 
@@ -38,8 +53,8 @@ class ToDoList extends Component {
           <List>{Array(this.state.tasks).fill(<Item />)}</List>
         </div>
         <AddOutlined className="addButton" />
-        <Input className="input" />
-        <Button variant="outlined" onClick={this.addTask}>
+        <Input className="input" ref={(a) => (this.input = a)} />
+        <Button type="submit" variant="outlined" onSubmit={this.addTask}>
           Add
         </Button>
       </div>

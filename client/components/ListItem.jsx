@@ -4,6 +4,8 @@ import ListItemText from '@material-ui/core/ListItemText';
 import Checkbox from '@material-ui/core/Checkbox';
 import EditOutlined from '@material-ui/icons/EditOutlined';
 import DeleteOutlined from '@material-ui/icons/DeleteOutlined';
+import { ItemTypes } from './ItemTypes.jsx';
+import { useDrag } from 'react-dnd';
 
 class Item extends Component {
   constructor(props) {
