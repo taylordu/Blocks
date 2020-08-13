@@ -21,7 +21,7 @@ class App extends Component {
             <div className="toDoList">
               <ToDoList />
             </div>
-            <div className="schedule">
+            <div>
               <Schedule />
             </div>
           </div>
@@ -31,4 +31,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default ADragDropContext(HTML5Backend)(App);

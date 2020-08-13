@@ -5,36 +5,17 @@ import Input from '@material-ui/core/Input';
 import Button from '@material-ui/core/Button';
 import AddOutlined from '@material-ui/icons/AddOutlined';
 import { ItemTypes } from './ItemTypes.jsx';
+import ListItem from '@material-ui/core/ListItem';
+import Checkbox from '@material-ui/core/Checkbox';
 
 class ToDoList extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      tasks: [],
+      tasks: ['code'],
     };
-    this.addTask = this.addTask.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
     this.deleteTask = this.deleteTask.bind(this);
-  }
-
-  addTask(event) {
-    if (this.inputElement.value !== '') {
-      let newTask = {
-        text: this.input.value,
-        id: 0,
-      };
-
-      this.setState((prevState) => {
-        return {
-          tasks: prevState.tasks.concat(newTask),
-        };
-      });
-
-      this.input.value = '';
-    }
-
-    console.log(this.state.tasks);
-
-    event.preventDefault();
   }
 
   deleteTask() {
@@ -43,18 +24,31 @@ class ToDoList extends Component {
     });
   }
 
+  onSubmit(event) {
+    event.preventDefault();
+    const task = this.task.value;
+    const newTask = { task: task };
+    const tasks = [...this.state.tasks, newTask];
+    this.setState({
+      tasks: tasks,
+    });
+  }
+
   render() {
+    const items = [];
+    for (let i = 0; i < this.state.tasks.length; i++) {
+      items.push(<Item />);
+    }
+
     return (
       <div>
         <div className="listHeader">
           <h3>Things To Do:</h3>
         </div>
-        <div className="listItems">
-          <List>{Array(this.state.tasks).fill(<Item />)}</List>
-        </div>
+        <div className="listItems">{items}</div>
         <AddOutlined className="addButton" />
-        <Input className="input" ref={(a) => (this.input = a)} />
-        <Button type="submit" variant="outlined" onSubmit={this.addTask}>
+        <Input className="input" />
+        <Button type="submit" variant="outlined" onSubmit={this.onSubmit}>
           Add
         </Button>
       </div>
