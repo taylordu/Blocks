@@ -19,9 +19,11 @@ class App extends Component {
           </div>
           <div className="wrapper">
             <div className="toDoList">
+              <h3>Tasks:</h3>
               <ToDoList />
             </div>
-            <div>
+            <div className="scheduleContainer">
+              <h3>Schedule:</h3>
               <Schedule />
             </div>
           </div>
@@ -31,4 +33,4 @@ class App extends Component {
   }
 }
 
-export default ADragDropContext(HTML5Backend)(App);
+export default App;
