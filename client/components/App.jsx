@@ -18,22 +18,35 @@ class App extends Component {
       categories: ['morning', 'afternoon', 'evening'],
       tasks: ['code', 'eat', 'sleep'],
     };
+    this.addCategory = this.addCategory.bind(this);
     this.addTask = this.addTask.bind(this);
+  }
+
+  addCategory(event) {
+    event.preventDefault();
+    let newCategory = 'night';
+    this.setState({
+      categories: [...this.state.categories, newCategory],
+    });
   }
 
   addTask(event) {
     event.preventDefault();
+    let newTask = 'drink';
+    this.setState({
+      tasks: [...this.state.tasks, newTask],
+    });
   }
 
   render() {
+    const categories = [];
+    for (let i = 0; i < this.state.categories.length; i++) {
+      categories.push(<Category />);
+    }
+
     const items = [];
     for (let i = 0; i < this.state.tasks.length; i++) {
       items.push(<Task />);
-    }
-
-    const categories = [];
-    for (let i = 0; i < this.state.categories.length; i++) {
-      items.push(<Category />);
     }
 
     return (
@@ -41,32 +54,22 @@ class App extends Component {
         <div className="header">
           <h1>Blocks</h1>
         </div>
-        <div className="buttons">
+        <div className="wrapper">
           <div className="addCategory">
-            <AddOutlined />
+            <AddOutlined id="plus" />
             <TextField className="textField" id="category" />
-            <Button type="submit" variant="outlined" onSubmit={this.addTask}>
+            <Button type="submit" variant="outlined" onClick={this.addCategory}>
               Add Category
             </Button>
+            <List>{categories}</List>
           </div>
           <div className="addTask">
-            <AddOutlined />
+            <AddOutlined id="plus" />
             <TextField className="textField" id="task" />
-            <Button type="submit" variant="outlined" onSubmit={this.addTask}>
+            <Button type="submit" variant="outlined" onClick={this.addTask}>
               Add Task
             </Button>
-          </div>
-        </div>
-        <div className="wrapper">
-          <div className="container">
-            <div className="items">
-              <List>{items}</List>
-            </div>
-          </div>
-          <div className="container">
-            <div className="items">
-              <List>{categories}</List>
-            </div>
+            <List>{items}</List>
           </div>
         </div>
       </div>
@@ -85,7 +88,7 @@ class Task extends Component {
         <div>
           <ListItem className="task">
             <Checkbox className="icon" />
-            <ListItemText primary="code" />
+            <ListItemText primary="Task" />
             <EditOutlined className="icon" />
             <DeleteOutlined className="icon" />
           </ListItem>
@@ -103,7 +106,7 @@ class Category extends Component {
     return (
       <Draggable bounds="body">
         <div className="category">
-          <h3>Taylor</h3>
+          <h3>Category</h3>
         </div>
       </Draggable>
     );

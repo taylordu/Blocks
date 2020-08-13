@@ -18,23 +18,9 @@ h3 {
 
 .wrapper {
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
-  width: 75%;
+  width: 40%;
   height: 100%;
-}
-
-.buttons {
-  display: flex;
-  width: 50%;
-  justify-content: space-between;
-}
-
-.task {
-  display: flex;
-  justify-content: space-between;
-  width: 15%;
-  cursor: grab;
 }
 
 #task {
@@ -46,7 +32,13 @@ h3 {
 }
 
 .category {
-  height: 50px;
+  cursor: grab;
+}
+
+.task {
+  display: flex;
+  justify-content: space-between;
+  width: 15%;
   cursor: grab;
 }
 
