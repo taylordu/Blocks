@@ -1,48 +1,48 @@
 import React, { Component } from 'react';
 import Item from './ListItem.jsx';
 import List from '@material-ui/core/List';
-import Button from '@material-ui/core/Button';
 import Input from '@material-ui/core/Input';
-import Checkbox from '@material-ui/core/Checkbox';
+import Button from '@material-ui/core/Button';
+import AddOutlined from '@material-ui/icons/AddOutlined';
+import DeleteOutlined from '@material-ui/icons/DeleteOutlined';
 
 class ToDoList extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      toDo: '',
+      tasks: 1,
     };
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+    this.addTask = this.addTask.bind(this);
+    this.deleteTask = this.deleteTask.bind(this);
   }
 
-  handleChange(event) {
-    this.setState({ toDo: event.target.value });
+  addTask() {
+    this.setState((prevState) => {
+      return { tasks: prevState.tasks + 1 };
+    });
   }
 
-  handleSubmit(event) {
-    alert('An item was submitted: ' + this.state.toDo);
-    event.preventDefault();
+  deleteTask() {
+    this.setState((prevState) => {
+      return { tasks: prevState.tasks - 1 };
+    });
   }
 
   render() {
-    const items = [<Item />];
     return (
       <div>
         <div className="listHeader">
           <h3>Things To Do:</h3>
         </div>
         <div className="listItems">
-          <List>{items}</List>
+          <List>{Array(this.state.tasks).fill(<Item />)}</List>
         </div>
-        <form className="input" autoComplete="off" onSubmit={this.handleSubmit}>
-          <Checkbox />
-          <Input
-            defaultValue=""
-            inputProps={{ 'aria-label': 'task' }}
-            value={this.state.toDo}
-            onChange={this.handleChange}
-          />
-        </form>
+        <AddOutlined />
+        <Input inputProps={{ 'aria-label': 'task' }} />
+        <Button variant="outlined" onClick={this.addTask}>
+          Add
+        </Button>
+        <DeleteOutlined onClick={this.deleteTask} />
       </div>
     );
   }

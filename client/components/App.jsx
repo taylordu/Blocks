@@ -1,8 +1,7 @@
-import React, { Component, useState } from 'react';
+import React, { Component } from 'react';
 import Schedule from './Schedule.jsx';
 import ToDoList from './ToDoList.jsx';
 import Button from '@material-ui/core/Button';
-import { DragDropContext } from 'react-beautiful-dnd';
 
 class App extends Component {
   constructor(props) {
@@ -29,6 +28,9 @@ class App extends Component {
   render() {
     return (
       <div>
+        <div className="header">
+          <h1>Blocks</h1>
+        </div>
         <div className="toDoList">
           <ToDoList />
         </div>
@@ -55,9 +57,3 @@ class App extends Component {
 }
 
 export default App;
-
-/*
-function Example() {
-  const [count, setCount] = useState(0);
-}
-*/

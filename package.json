@@ -23,7 +23,6 @@
     "@material-ui/icons": "^4.9.1",
     "express": "^4.17.1",
     "react": "^16.13.1",
-    "react-beautiful-dnd": "^13.0.0",
     "react-dom": "^16.13.1"
   },
   "devDependencies": {

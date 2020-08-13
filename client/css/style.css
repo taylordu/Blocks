@@ -15,6 +15,11 @@ h3 {
 
 .schedule {
   display: flex;
-  justify-content: space-between;
+  width: 10%;
+}
+
+.listItem {
+  display: flex;
+  justify-content: flex-start;
   width: 10%;
 }
