@@ -12,8 +12,8 @@ class Item extends Component {
 
   render() {
     return (
-      <div className="listItem">
-        <ListItem>
+      <div>
+        <ListItem className="listItem">
           <Checkbox />
           <ListItemText primary="done" />
           <EditOutlined />

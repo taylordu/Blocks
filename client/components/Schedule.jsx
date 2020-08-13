@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemText from '@material-ui/core/ListItemText';
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableContainer from '@material-ui/core/TableContainer';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
 
 class Schedule extends Component {
   constructor(props) {
@@ -10,44 +13,58 @@ class Schedule extends Component {
   render() {
     return (
       <div className="schedule">
-        <List>
-          <ListItem divider="true">
-            <ListItemText primary="9:00" />
-          </ListItem>
-          <ListItem divider="true">
-            <ListItemText primary="10:00" />
-          </ListItem>
-          <ListItem divider="true">
-            <ListItemText primary="11:00" />
-          </ListItem>
-          <ListItem divider="true">
-            <ListItemText primary="12:00" />
-          </ListItem>
-          <ListItem divider="true">
-            <ListItemText primary="1:00" />
-          </ListItem>
-          <ListItem divider="true">
-            <ListItemText primary="2:00" />
-          </ListItem>
-          <ListItem divider="true">
-            <ListItemText primary="3:00" />
-          </ListItem>
-          <ListItem divider="true">
-            <ListItemText primary="4:00" />
-          </ListItem>
-          <ListItem divider="true">
-            <ListItemText primary="5:00" />
-          </ListItem>
-          <ListItem divider="true">
-            <ListItemText primary="6:00" />
-          </ListItem>
-          <ListItem divider="true">
-            <ListItemText primary="7:00" />
-          </ListItem>
-          <ListItem divider="true">
-            <ListItemText primary="8:00" />
-          </ListItem>
-        </List>
+        <TableContainer>
+          <Table>
+            <TableRow>
+              <TableCell>9:00</TableCell>
+              <TableCell></TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell>10:00</TableCell>
+              <TableCell></TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell>11:00</TableCell>
+              <TableCell></TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell>12:00</TableCell>
+              <TableCell></TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell>1:00</TableCell>
+              <TableCell></TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell>2:00</TableCell>
+              <TableCell></TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell>3:00</TableCell>
+              <TableCell></TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell>4:00</TableCell>
+              <TableCell></TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell>5:00</TableCell>
+              <TableCell></TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell>6:00</TableCell>
+              <TableCell></TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell>7:00</TableCell>
+              <TableCell></TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell>8:00</TableCell>
+              <TableCell></TableCell>
+            </TableRow>
+          </Table>
+        </TableContainer>
       </div>
     );
   }

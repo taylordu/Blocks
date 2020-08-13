@@ -37,12 +37,11 @@ class ToDoList extends Component {
         <div className="listItems">
           <List>{Array(this.state.tasks).fill(<Item />)}</List>
         </div>
-        <AddOutlined />
-        <Input inputProps={{ 'aria-label': 'task' }} />
+        <AddOutlined className="addButton" />
+        <Input className="input" />
         <Button variant="outlined" onClick={this.addTask}>
           Add
         </Button>
-        <DeleteOutlined onClick={this.deleteTask} />
       </div>
     );
   }

@@ -10,16 +10,17 @@ h3 {
 
 .wrapper {
   display: flex;
-  justify-content: flex-start;
-}
-
-.schedule {
-  display: flex;
-  width: 10%;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 30%;
 }
 
 .listItem {
   display: flex;
-  justify-content: flex-start;
-  width: 10%;
+  justify-content: space-between;
+  width: 15%;
+}
+
+.input {
+  margin: 5px;
 }
