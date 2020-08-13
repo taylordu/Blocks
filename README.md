@@ -1,1 +1,1 @@
-This is my solo project.
+Blocks is a drag and drop task manager.

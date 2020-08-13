@@ -1,24 +1,19 @@
-h1 {
-  font-family: sans-serif;
-  color: teal;
-}
-
-h3 {
-  font-family: sans-serif;
-  color: navy;
-}
-
-h4 {
-  font-family: sans-serif;
-  color: teal;
-}
-
 html {
   height: 100%;
 }
 
 body {
   height: 100%;
+}
+
+h1 {
+  font-family: sans-serif;
+  color: darkcyan;
+}
+
+h3 {
+  font-family: sans-serif;
+  color: navy;
 }
 
 .wrapper {
@@ -35,7 +30,7 @@ body {
   justify-content: space-between;
 }
 
-.listItem {
+.task {
   display: flex;
   justify-content: space-between;
   width: 15%;
@@ -50,14 +45,7 @@ body {
   margin: 5px;
 }
 
-.schedule {
-  display: flex;
-  flex-direction: column;
-  width: 300px;
-  height: 2000px;
-}
-
-.hour {
+.category {
   height: 50px;
   cursor: grab;
 }

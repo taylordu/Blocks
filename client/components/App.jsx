@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import Draggable from 'react-draggable';
+
 import List from '@material-ui/core/List';
-import Input from '@material-ui/core/Input';
-import Button from '@material-ui/core/Button';
-import AddOutlined from '@material-ui/icons/AddOutlined';
-import TextField from '@material-ui/core/TextField';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
+import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
 import Checkbox from '@material-ui/core/Checkbox';
+import AddOutlined from '@material-ui/icons/AddOutlined';
 import EditOutlined from '@material-ui/icons/EditOutlined';
 import DeleteOutlined from '@material-ui/icons/DeleteOutlined';
 
@@ -28,12 +28,12 @@ class App extends Component {
   render() {
     const items = [];
     for (let i = 0; i < this.state.tasks.length; i++) {
-      items.push(<Item />);
+      items.push(<Task />);
     }
 
     const categories = [];
     for (let i = 0; i < this.state.categories.length; i++) {
-      items.push(<Schedule />);
+      items.push(<Category />);
     }
 
     return (
@@ -58,13 +58,13 @@ class App extends Component {
           </div>
         </div>
         <div className="wrapper">
-          <div className="toDoList">
-            <div className="listItems">
+          <div className="container">
+            <div className="items">
               <List>{items}</List>
             </div>
           </div>
-          <div className="scheduleContainer">
-            <div className="listItems">
+          <div className="container">
+            <div className="items">
               <List>{categories}</List>
             </div>
           </div>
@@ -74,7 +74,7 @@ class App extends Component {
   }
 }
 
-class Item extends Component {
+class Task extends Component {
   constructor(props) {
     super(props);
   }
@@ -83,7 +83,7 @@ class Item extends Component {
     return (
       <Draggable bounds="body">
         <div>
-          <ListItem className="listItem">
+          <ListItem className="task">
             <Checkbox className="icon" />
             <ListItemText primary="code" />
             <EditOutlined className="icon" />
@@ -95,15 +95,15 @@ class Item extends Component {
   }
 }
 
-class Schedule extends Component {
+class Category extends Component {
   constructor(props) {
     super(props);
   }
   render() {
     return (
       <Draggable bounds="body">
-        <div className="hour">
-          <h4>Taylor</h4>
+        <div className="category">
+          <h3>Taylor</h3>
         </div>
       </Draggable>
     );
